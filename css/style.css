@@ -28,13 +28,6 @@ label {
     line-height: 1.1;
 }
 
-h1,
-h2,
-h3,
-h4 {
-    text-wrap: balance;
-}
-
 img,
 picture {
     max-width: 100%;
@@ -99,7 +92,7 @@ body {
 
 .content-grid {
     display: grid;
-    grid-template-columns: [full-width-start] 10rem [content-start] 1fr [content-end] 10rem [full-width-end];
+    grid-template-columns: [full-width-start] 7% [content-start] 1fr [content-end] 7% [full-width-end];
 }
 
 .content-grid>* {
@@ -123,8 +116,8 @@ header {
 nav>ul {
     display: flex;
     align-items: center;
-    gap: 6rem;
-    height: 4.5rem;
+    gap: 6%;
+    height: 4rem;
     padding-inline: 2rem;
 }
 
@@ -139,13 +132,76 @@ nav>ul {
 .nav__link {
     text-decoration: none;
     color: var(--black);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 300;
 }
 
 .nav__link-landing {
     font-weight: bold;
-    font-size: 2.3rem;
+    font-size: 2.4rem;
+}
+
+.landing__img {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.landing__content {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5%;
+    align-items: center;
+    margin-block: 5%;
+    position: relative;
+}
+
+.landing__content::after {
+    content: url(../assets/landing_line.png);
+    position: absolute;
+    right: 5rem;
+    z-index: -1;
+    transform: translateX(1rem);
+}
+
+.landing__text {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    width: 55%;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.landing__text::before {
+    content: "";
+    height: 130%;
+    width: 0.5rem;
+    background-color: var(--green);
+    top: -15%;
+    left: 0.5rem;
+    position: absolute;
+}
+
+.landing__button {
+    background-color: var(--green);
+    color: var(--bg);
+    border: none;
+    border-radius: 10px;
+    height: 2.5em;
+    width: auto;
+    max-width: 100%;
+    transition: background-color 90ms ease-in-out;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+.landing__button:hover,
+.landing__button:focus {
+    background-color: var(--black);
+}
+
+.landing__link {
+    text-decoration: none;
+    color: inherit;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    padding-inline: 1.25em;
 }
 
 .about-us {
