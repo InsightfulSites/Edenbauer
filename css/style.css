@@ -100,7 +100,7 @@ body {
 }
 
 .content-grid>.full-width {
-    grid-column: full-width;
+    grid-column: full-width-start / full-width-end;
 }
 
 header {
@@ -118,7 +118,6 @@ nav>ul {
     align-items: center;
     gap: 6%;
     height: 4rem;
-    padding-inline: 2rem;
 }
 
 .nav__li {
@@ -127,7 +126,7 @@ nav>ul {
     position: relative;
 }
 
-.nav__li:not(.nav__li-landing)::before {
+.nav__li:not(.nav__li-hero)::before {
     content: "";
     width: 100%;
     height: 3.5px;
@@ -143,7 +142,7 @@ nav>ul {
     transform: translate(0, 0);
 }
 
-.nav__li-landing {
+.nav__li-hero {
     margin-right: auto;
 }
 
@@ -154,51 +153,59 @@ nav>ul {
     font-weight: 300;
 }
 
-.nav__link-landing {
+.nav__link-hero {
     font-weight: bold;
     font-size: 2.4rem;
 }
 
-.landing__img {
-    margin-top: 1rem;
-    width: 100%;
+@media (max-width: 830px) {
+    .nav__li:not(.nav__li-hero) {
+        display: none;
+    }
 }
 
-.landing__content {
+.hero__img {
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.hero__content {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 5%;
+    column-gap: 2rem;
     align-items: center;
     margin-block: 5%;
     position: relative;
 }
 
-.landing__content::after {
-    content: url(../assets/landing_line.png);
+.hero__content::after {
+    content: url(../assets/hero_line.svg);
     position: absolute;
-    right: 5rem;
+    right: 3rem;
     z-index: -1;
     transform: translateX(1rem);
 }
 
-.landing__text {
+.hero__text {
     font-size: clamp(1.5rem, 3vw, 3rem);
     width: 55%;
     position: relative;
-    padding-left: 3rem;
+    padding-left: 1em;
 }
 
-.landing__text::before {
+.hero__text::before {
     content: "";
     height: 130%;
-    width: 0.5rem;
+    width: 0.2em;
     background-color: var(--green);
     top: -15%;
     left: 0.5rem;
     position: absolute;
 }
 
-.landing__button {
+.hero__button {
     background-color: var(--green);
     color: var(--bg);
     border: none;
@@ -207,15 +214,16 @@ nav>ul {
     width: auto;
     max-width: 100%;
     transition: background-color 90ms ease-in-out;
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 2vw, 2rem);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-.landing__button:hover,
-.landing__button:focus {
+.hero__button:hover,
+.hero__button:focus {
     background-color: var(--black);
 }
 
-.landing__link {
+.hero__link {
     text-decoration: none;
     color: inherit;
     font-size: clamp(1rem, 2.5vw, 2rem);
