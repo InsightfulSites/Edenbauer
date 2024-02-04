@@ -82,6 +82,13 @@ textarea:not([rows]) {
     --bg: #FAF4EA;
 }
 
+@font-face {
+    font-family: "Inter";
+    src:
+        local("Inter"),
+        url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -151,7 +158,7 @@ nav>ul {
     text-decoration: none;
     color: var(--black);
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: light;
 }
 
 .nav__link-hero {
@@ -165,11 +172,17 @@ nav>ul {
     }
 }
 
+.hero {
+    scroll-margin-top: 5rem;
+}
+
 .hero__img {
     margin-top: 1rem;
     width: 100%;
     border-radius: 15px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .hero__content {
@@ -177,20 +190,13 @@ nav>ul {
     flex-wrap: wrap;
     column-gap: 2rem;
     align-items: center;
+    justify-content: space-between;
     margin-block: 5%;
     position: relative;
 }
 
-.hero__content::after {
-    content: url(../assets/hero_line.svg);
-    position: absolute;
-    right: 3rem;
-    z-index: -1;
-    transform: translateX(1rem);
-}
-
 .hero__text {
-    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-size: clamp(2rem, 3vw, 5rem);
     width: 55%;
     position: relative;
     padding-left: 1em;
@@ -212,11 +218,10 @@ nav>ul {
     border: none;
     border-radius: 10px;
     height: 2.5em;
-    width: auto;
-    max-width: 100%;
     transition: background-color 90ms ease-in-out;
     font-size: clamp(1rem, 2vw, 2rem);
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    flex-grow: 1;
 }
 
 .hero__button:hover,
@@ -225,10 +230,44 @@ nav>ul {
 }
 
 .hero__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: inherit;
     font-size: clamp(1rem, 2.5vw, 2rem);
-    padding-inline: 1.25em;
+    padding: 0.5em 1.25em;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 704px) {
+    .hero__content {
+        flex-direction: column;
+        row-gap: 1.2rem;
+    }
+
+    .hero__text::before {
+        display: none;
+    }
+
+    .hero__text {
+        width: 100%;
+        padding: 0;
+    }
+
+    .hero__button {
+        width: 100%;
+    }
+
+    .hero__link {
+        padding: 0;
+        font-size: 1.5rem;
+    }
+
+    .hero__img {
+        height: 27rem;
+    }
 }
 
 .about-us {
