@@ -195,6 +195,15 @@ nav>ul {
     position: relative;
 }
 
+.hero__content::after {
+  content: url(../assets/hero_line.svg);
+  position: absolute;
+  top: -16rem;
+  right: 3rem;
+  z-index: -1;
+  transform: translateX(1rem);
+}
+
 .hero__text {
     font-size: clamp(2rem, 3vw, 5rem);
     width: 55%;
@@ -267,6 +276,10 @@ nav>ul {
 
     .hero__img {
         height: 27rem;
+    }
+
+    .hero__content::after {
+      opacity: 0;
     }
 }
 
