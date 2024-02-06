@@ -166,7 +166,7 @@ nav>ul {
     font-size: 2.4rem;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 850px) {
     .nav__li:not(.nav__li-hero) {
         display: none;
     }
@@ -285,4 +285,8 @@ nav>ul {
 
 .about-us {
     background-color: var(--green);
+}
+
+.contact {
+  height: 100vh;
 }
