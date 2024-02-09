@@ -2,4 +2,3 @@
 *.bat
 
 # Ignoriere das Verzeichnis "secret"
-secret/
