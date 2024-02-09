@@ -1,3 +1,4 @@
+/* Reset styles */
 *,
 *::before,
 *::after {
@@ -6,18 +7,19 @@
     padding: 0;
 }
 
+/* Text adjustments */
 html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
     text-size-adjust: none;
 }
 
+/* Body styles */
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
 }
 
+/* Heading and form element styles */
 h1,
 h2,
 h3,
@@ -28,6 +30,7 @@ label {
     line-height: 1.1;
 }
 
+/* Image and media styles */
 img,
 picture,
 iframe {
@@ -46,23 +49,15 @@ select {
     font: inherit;
 }
 
-html:focus-within {
-    scroll-behavior: smooth;
-}
-
+/* Adjustments for targeted elements */
 :target {
-    scroll-margin-block: 5ex;
+    scroll-margin-block: 8ex;
 }
 
-textarea:not([rows]) {
-    min-height: 10em;
-}
-
+/* Reduced motion styles */
 @media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto;
-    }
 
+    html:focus-within,
     *,
     *::before,
     *::after {
@@ -73,8 +68,7 @@ textarea:not([rows]) {
     }
 }
 
-
-
+/* Color variables */
 :root {
     --black: #1E1E1E;
     --gray: #878585;
@@ -82,13 +76,13 @@ textarea:not([rows]) {
     --bg: #FAF4EA;
 }
 
+/* Font face */
 @font-face {
     font-family: "Inter";
-    src:
-        local("Inter"),
-        url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
+    src: local("Inter"), url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
+/* Global styles */
 html {
     scroll-behavior: smooth;
 }
@@ -98,6 +92,7 @@ body {
     font-family: Inter;
 }
 
+/* Grid layout */
 .content-grid {
     display: grid;
     grid-template-columns: [full-width-start] 7% [content-start] 1fr [content-end] 7% [full-width-end];
@@ -111,6 +106,7 @@ body {
     grid-column: full-width-start / full-width-end;
 }
 
+/* Header styles */
 header {
     background: rgba(250, 244, 234, 0.75);
     backdrop-filter: blur(10px);
@@ -121,6 +117,7 @@ header {
     z-index: 1;
 }
 
+/* Navigation styles */
 nav>ul {
     display: flex;
     align-items: center;
@@ -128,6 +125,7 @@ nav>ul {
     height: 4rem;
 }
 
+/* Navigation item styles */
 .nav__li {
     list-style: none;
     overflow: hidden;
@@ -172,10 +170,6 @@ nav>ul {
     }
 }
 
-.hero {
-    scroll-margin-top: 5rem;
-}
-
 .hero__img {
     margin-top: 1rem;
     width: 100%;
@@ -196,12 +190,12 @@ nav>ul {
 }
 
 .hero__content::after {
-  content: url(../assets/hero_line.svg);
-  position: absolute;
-  top: -16rem;
-  right: 3rem;
-  z-index: -1;
-  transform: translateX(1rem);
+    content: url(../assets/hero_line.svg);
+    position: absolute;
+    top: -16rem;
+    right: 3rem;
+    z-index: -1;
+    transform: translateX(1rem);
 }
 
 .hero__text {
@@ -251,6 +245,8 @@ nav>ul {
 }
 
 @media (max-width: 704px) {
+
+    /* Responsive adjustments for smaller screens */
     .hero__content {
         flex-direction: column;
         row-gap: 1.2rem;
@@ -279,14 +275,11 @@ nav>ul {
     }
 
     .hero__content::after {
-      opacity: 0;
+        opacity: 0;
     }
 }
 
+/* About us section styles */
 .about-us {
     background-color: var(--green);
-}
-
-.contact {
-  height: 100vh;
 }
