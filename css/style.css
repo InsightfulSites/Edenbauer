@@ -310,17 +310,17 @@ nav>ul {
 }
 
 #contact__form__email {
-  grid-area: 'email';
+  grid-area: email;
 }
 
 #contact__form__phoneNumber {
-  grid-area: 'phone';
+  grid-area: phone;
 }
 
 #contact__form__message {
-  grid-area: 'message';
+  grid-area: message;
 }
 
 #contact__form button {
-  grid-area: 'button';
+  grid-area: button;
 }
