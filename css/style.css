@@ -1,3 +1,4 @@
+/* Reset styles */
 *,
 *::before,
 *::after {
@@ -6,18 +7,12 @@
     padding: 0;
 }
 
-html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-}
-
+/* Body styles */
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
     line-height: 1.5;
 }
 
+/* Heading and form element styles */
 h1,
 h2,
 h3,
@@ -28,6 +23,7 @@ label {
     line-height: 1.1;
 }
 
+/* Image and media styles */
 img,
 picture,
 iframe {
@@ -46,23 +42,15 @@ select {
     font: inherit;
 }
 
-html:focus-within {
-    scroll-behavior: smooth;
-}
-
+/* Adjustments for targeted elements */
 :target {
-    scroll-margin-block: 5ex;
+    scroll-margin-block: 8ex;
 }
 
-textarea:not([rows]) {
-    min-height: 10em;
-}
-
+/* Reduced motion styles */
 @media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto;
-    }
 
+    html:focus-within,
     *,
     *::before,
     *::after {
@@ -73,8 +61,7 @@ textarea:not([rows]) {
     }
 }
 
-
-
+/* Color variables */
 :root {
     --black: #1E1E1E;
     --gray: #878585;
@@ -82,13 +69,13 @@ textarea:not([rows]) {
     --bg: #FAF4EA;
 }
 
+/* Font face */
 @font-face {
     font-family: "Inter";
-    src:
-        local("Inter"),
-        url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
+    src: local("Inter"), url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
+/* Global styles */
 html {
     scroll-behavior: smooth;
 }
@@ -98,6 +85,7 @@ body {
     font-family: Inter;
 }
 
+/* Grid layout */
 .content-grid {
     display: grid;
     grid-template-columns: [full-width-start] 7% [content-start] 1fr [content-end] 7% [full-width-end];
@@ -111,6 +99,7 @@ body {
     grid-column: full-width-start / full-width-end;
 }
 
+/* Header styles */
 header {
     background: rgba(250, 244, 234, 0.75);
     backdrop-filter: blur(10px);
@@ -121,6 +110,7 @@ header {
     z-index: 1;
 }
 
+/* Navigation styles */
 nav>ul {
     display: flex;
     align-items: center;
@@ -128,6 +118,7 @@ nav>ul {
     height: 4rem;
 }
 
+/* Navigation item styles */
 .nav__li {
     list-style: none;
     overflow: hidden;
@@ -172,10 +163,6 @@ nav>ul {
     }
 }
 
-.hero {
-    scroll-margin-top: 5rem;
-}
-
 .hero__img {
     margin-top: 1rem;
     width: 100%;
@@ -196,12 +183,12 @@ nav>ul {
 }
 
 .hero__content::after {
-  content: url(../assets/hero_line.svg);
-  position: absolute;
-  top: -16rem;
-  right: 3rem;
-  z-index: -1;
-  transform: translateX(1rem);
+    content: url(../assets/hero_line.svg);
+    position: absolute;
+    top: -16rem;
+    right: 3rem;
+    z-index: -1;
+    transform: translateX(1rem);
 }
 
 .hero__text {
@@ -209,6 +196,7 @@ nav>ul {
     width: 55%;
     position: relative;
     padding-left: 1em;
+    text-wrap: balance;
 }
 
 .hero__text::before {
@@ -221,36 +209,67 @@ nav>ul {
     position: absolute;
 }
 
-.hero__button {
-    background-color: var(--green);
-    color: var(--bg);
-    border: none;
-    border-radius: 10px;
-    height: 2.5em;
-    transition: background-color 90ms ease-in-out;
-    font-size: clamp(1rem, 2vw, 2rem);
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    flex-grow: 1;
-}
-
-.hero__button:hover,
-.hero__button:focus {
-    background-color: var(--black);
-}
-
 .hero__link {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: inherit;
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    flex-grow: 1;
+    gap: 1rem;
     padding: 0.5em 1.25em;
-    width: 100%;
-    height: 100%;
+    height: 2.5em;
+    border-radius: 10px;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    text-decoration: none;
+    color: var(--bg);
+    background-color: var(--green);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    transition: background-color 90ms ease-in-out;
+}
+
+.hero__link:hover,
+.hero__link:focus {
+    background-color: var(--black);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero__link:hover .hero__link-arrow {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.5, 0, 0, 1);
+        animation-delay: 250ms;
+        animation-iteration-count: 1;
+        animation-name: arrow_up-down;
+    }
+}
+
+.hero__link-arrow {
+    position: relative;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+@keyframes arrow_up-down {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-40%);
+    }
+
+    60% {
+        transform: translateY(-5%);
+    }
 }
 
 @media (max-width: 704px) {
+
+    /* Responsive adjustments for smaller screens */
     .hero__content {
         flex-direction: column;
         row-gap: 1.2rem;
@@ -265,13 +284,9 @@ nav>ul {
         padding: 0;
     }
 
-    .hero__button {
-        width: 100%;
-    }
-
     .hero__link {
-        padding: 0;
         font-size: 1.5rem;
+        width: 100%;
     }
 
     .hero__img {
@@ -279,48 +294,50 @@ nav>ul {
     }
 
     .hero__content::after {
-      opacity: 0;
+        opacity: 0;
     }
 }
 
+/* About us section styles */
 .about-us {
     background-color: var(--green);
 }
 
 .contact {
-  height: 100vh;
+    height: 100vh;
 }
+
 #contact__form {
-  border: 1px solid black;
-  display: grid;
-  grid-template-areas:
-      'firstName firstName lastName lastName'
-      'email email email phone'
-      'message message message message'
-      'button';
-  gap: 1rem;
+    border: 1px solid black;
+    display: grid;
+    grid-template-areas:
+        'firstName firstName lastName lastName'
+        'email email email phone'
+        'message message message message'
+        'button';
+    gap: 1rem;
 }
 
 #contact__form__firstName {
-  grid-area: 'firstName';
+    grid-area: 'firstName';
 }
 
 #contact__form__lastName {
-  grid-area: 'lastName';
+    grid-area: 'lastName';
 }
 
 #contact__form__email {
-  grid-area: email;
+    grid-area: email;
 }
 
 #contact__form__phoneNumber {
-  grid-area: phone;
+    grid-area: phone;
 }
 
 #contact__form__message {
-  grid-area: message;
+    grid-area: message;
 }
 
 #contact__form button {
-  grid-area: button;
+    grid-area: button;
 }
