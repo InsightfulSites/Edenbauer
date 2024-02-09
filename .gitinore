@@ -1,4 +1,4 @@
-# Ignoriere alle Dateien mit der Endung .log
+# Ignoriere alle Dateien mit der Endung .bat
 *.bat
 
 # Ignoriere das Verzeichnis "secret"
