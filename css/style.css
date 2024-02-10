@@ -300,6 +300,94 @@ nav > ul {
   background-color: var(--green);
 }
 
+.about-us {
+
+
+  
+}
+.about-us__container {
+
+  display: flex;
+  margin-bottom: 3rem;
+
+}
+
+.about-us-h2 {
+    color: #FAF4EA;
+    padding-top: 30px;
+    font-size: clamp(2rem, 3vw, 5rem);
+}
+
+.about-us-p {
+    color: #FAF4EA;
+    font-size: 30px;
+}
+
+.about-us-h2::after {
+    content: '';
+    background-color: #FAF4EA;
+    display: block;
+    height: 6px;
+    width: 140px;
+}
+
+.about-us-img {
+    height: 300px;
+    border-radius: 15px;
+    margin-top: 2rem;
+    object-fit: cover;
+    width: 300px;
+    height: 90%;
+}
+
+.about-us_item-1{
+
+height: 250px;
+border-radius: 15px;
+margin-left: 12rem;
+}
+
+.about-us_item-2{
+
+  height: 250px;
+  border-radius: 15px;
+  
+}
+
+.about-us_item-3{
+
+  height: 250px;
+  border-radius: 15px;
+
+}
+
+.about-us__container__bigone{
+
+  margin-left: 5em;
+  margin-top: 3rem;
+
+}
+
+.about-us__container__box{
+
+display: flex;
+flex-wrap: wrap;
+gap: 14rem;
+
+}
+
+.about-us__container__box__item{
+
+width: 3rem;
+aspect-ratio: 1;
+margin-top: 4rem;
+background-color: black;
+width: 300px;
+
+
+}
+
+
 /*Contact section styles */
 .contact {
   margin-bottom: 5rem;
