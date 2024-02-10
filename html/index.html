@@ -97,24 +97,15 @@
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-            <form action="https://formsubmit.co/insightfulsites.office@gmail.com" method="POST" class="contact__form">
-                <div class="contact__form__firstName">
-                    <input type="text" name="firstName" required="required" placeholder="Max">
-                </div>
-                <div class="contact__form__lastName">
-                    <input type="text" name="lastName" required="required" placeholder="Mustermann">
-                </div>
-                <div class="contact__form__email">
-                    <input type="email" name="email" required="required" placeholder="max.mustermann@gmail.com">
-                </div>
-                <div class="contact__form__phoneNumber">
-                    <input type="text" name="phonenumber" required="required" placeholder="+43">
-                </div>
-                <div class="contact__form__message">
-                    <input type="text" name="message" required="required" placeholder="Ihre Nachricht..">
-                </div>
-                <button type="submit">Senden</button>
-            </form>
+            <form action="https://formsubmit.co/insightfulsites.office@gmail.com" method="POST" id="contact__form">
+              <input type="text" name="name" required placeholder="Max" id="contact__form__firstName">
+              <input type="text" name="name" required placeholder="Mustermann" id="contact__form__lastName">
+              <input type="email" name="email" required placeholder="max.mustermann@gmail.com" id="contact__form__email">
+              <input type="text" name="phonenumber" required placeholder="+43 664 8392012" id="contact__form__phoneNumber">
+              <input type="text" name="message" required placeholder="Ihre Nachricht.." id="contact__form__message">
+
+              <button type="submit">Send</button>
+          </form>
         </section>
     </main>
 </body>
