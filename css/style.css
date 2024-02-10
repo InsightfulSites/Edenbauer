@@ -307,7 +307,7 @@ nav>ul {
     height: 100vh;
 }
 
-#contact__form {
+.contact__form {
     border: 1px solid black;
     display: grid;
     grid-template-areas:
@@ -318,26 +318,26 @@ nav>ul {
     gap: 1rem;
 }
 
-#contact__form__firstName {
+.contact__form__firstName {
     grid-area: 'firstName';
 }
 
-#contact__form__lastName {
+.contact__form__lastName {
     grid-area: 'lastName';
 }
 
-#contact__form__email {
+.contact__form__email {
     grid-area: email;
 }
 
-#contact__form__phoneNumber {
+.contact__form__phoneNumber {
     grid-area: phone;
 }
 
-#contact__form__message {
+.contact__form__message {
     grid-area: message;
 }
 
-#contact__form button {
+.contact__form button {
     grid-area: button;
 }
