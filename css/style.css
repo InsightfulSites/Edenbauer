@@ -309,24 +309,26 @@ nav>ul {
     margin-bottom: 3rem;
 
 }
-
-.about-us-h2 {
-    color: #FAF4EA;
+/*for contact aswell, same h2*/
+.about-us-h2, .contact__h2 {
+    color: var(--bg);
     padding-top: 30px;
-    font-size: clamp(2rem, 3vw, 5rem);
+    font-size: clamp(2rem, 2.5vw, 3.75rem);
+     width: fit-content;
+    
 }
 
 .about-us-p {
-    color: #FAF4EA;
+    color: var(--bg);
     font-size: 30px;
 }
 
 .about-us-h2::after {
-    content: '';
-    background-color: #FAF4EA;
-    display: block;
-    height: 6px;
-    width: 140px;
+  content: '';
+  background-color: var(--bg);
+  display: block;
+  height: 6px;
+  width: 100%;
 }
 
 .about-us-img {
@@ -440,7 +442,19 @@ nav>ul {
 .contact {
     margin-bottom: 5rem;
 }
-
+.contact__h2 {
+  color: var(--black);
+  width: fit-content;
+}
+.contact__h2::after {
+  content: '';
+  background-color: var(--green);
+  display: block;
+  height: 6px;
+  width: 100%;
+  margin-bottom: 3vh;
+  margin-top: 0;
+}
 .contact p {
     font-size: 1.25rem;
 }
@@ -532,6 +546,14 @@ nav>ul {
     grid-column: 2/4;
     background-color: var(--green);
     color: var(--bg);
+    font-size: 1.5rem;
+    border: 0.1px solid black;
+    opacity: 90%;
+    border-radius: 0.2vh 
+}
+.contact__form button:active, 
+.contact__form button:hover{
+  background-color: var(--black);
 }
 
 .contact__form input {
@@ -542,6 +564,20 @@ nav>ul {
 .contact__form textarea {
     padding-left: 0.5rem;
     font-size: 1.25em;
+    background-color: #ece7dd;
+    border: 0.1px solid black;
+    opacity: 80%;
+    border-radius: 0.2vh ;
+    color: var(--black);
+
+}
+.contact__form input::placeholder,
+.contact__form textarea::placeholder{
+  color: var(--black);
+}
+.contact__form input:focus, .contact__form textarea:focus{
+  background-color: #c6c2ba;
+  outline-color:  var(--green);
 }
 
 .contact__form__maps {
