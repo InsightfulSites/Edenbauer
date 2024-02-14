@@ -298,7 +298,7 @@ nav>ul {
     }
 }
 
-/* About us section styles */
+/* About us section styles *
 .about-us {
     background-color: var(--green);
 }
@@ -309,7 +309,7 @@ nav>ul {
     margin-bottom: 3rem;
 
 }
-/*for contact aswell, same h2*/
+/*for contact aswell, same h2*
 .about-us-h2, .contact__h2 {
     color: var(--bg);
     padding-top: 30px;
@@ -386,7 +386,7 @@ nav>ul {
 
 
 }
-
+*/
 .products {
     margin-block: 6rem;
 }
@@ -437,16 +437,76 @@ nav>ul {
 .products__item-5 {
     grid-area: item-5;
 }
+/*FAQ 
+h2 is by contact style contact__h2 included*/
+.accordions{
+  gap: 10vh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6rem;
+}
 
-/*Contact section styles */
+.accordion{
+  border: 1px solid black;
+  border-radius: 0.2vh;
+
+}
+
+.accordion h3{
+
+  padding: clamp(20px, 2vw, 2rem);
+  margin-right: auto;
+  font-size: clamp(1rem, 1vw, 3rem);
+
+}
+
+.accordion > div{
+  display: flex;
+  background-color: var(--green);
+  color: var(--bg);
+}
+
+.line1,
+.line2{
+  display: block;
+  width: 5px;
+  height: clamp(2rem,2vw,4rem);
+  background-color: var(--bg);
+  margin-right: clamp(33px, 4vw, 5rem);
+  border-radius: 6px;
+}
+.line1{
+  --line-height: clamp(2rem, 2vw, 4rem);
+  --line-placement: clamp(15px, 1vw, 33px);
+  transform: rotate(90deg) translateX(calc(var(--line-height) - var(--line-placement)));
+}
+.line2{
+  --line-placement: calc(clamp(15px, 1vw, 33px) * -1);
+  transform: translateY(var(--line-placement)); 
+}
+.accordion p {
+  font-size: clamp(1rem, 1vw, 3rem);
+  padding-left: clamp(20px, 2vw, 2rem);
+  transition: transform 0.3s ease-in-out;
+  transform: scaleY(1);
+  
+  
+}
+
+/*Contact  styles */
 .contact {
     margin-bottom: 5rem;
 }
-.contact__h2 {
+.contact__h2,
+.faq h2 {
   color: var(--black);
   width: fit-content;
+  font-size: clamp(2rem, 2.5vw, 3.75rem);
+  padding: 0;
+
 }
-.contact__h2::after {
+.contact__h2::after,
+.faq h2::after {
   content: '';
   background-color: var(--green);
   display: block;
@@ -456,7 +516,7 @@ nav>ul {
   margin-top: 0;
 }
 .contact p {
-    font-size: 1.25rem;
+  font-size: clamp(1rem, 1vw, 3rem);
 }
 
 .contact__info {
