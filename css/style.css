@@ -23,6 +23,7 @@ label {
     line-height: 1.1;
 }
 
+
 /* Image and media styles */
 img,
 picture,
@@ -268,7 +269,6 @@ nav>ul {
 }
 
 @media (max-width: 704px) {
-
     /* Responsive adjustments for smaller screens */
     .hero__content {
         flex-direction: column;
@@ -298,95 +298,21 @@ nav>ul {
     }
 }
 
-/* About us section styles *
 .about-us {
     background-color: var(--green);
+    color: var(--bg);
+    padding: 2rem;
 }
 
 .about-us__container {
-
     display: flex;
-    margin-bottom: 3rem;
-
-}
-/*for contact aswell, same h2*
-.about-us-h2, .contact__h2 {
-    color: var(--bg);
-    padding-top: 30px;
-    font-size: clamp(2rem, 2.5vw, 3.75rem);
-     width: fit-content;
-    
-}
-
-.about-us-p {
-    color: var(--bg);
-    font-size: 30px;
-}
-
-.about-us-h2::after {
-  content: '';
-  background-color: var(--bg);
-  display: block;
-  height: 6px;
-  width: 100%;
 }
 
 .about-us-img {
-    height: 300px;
-    border-radius: 15px;
-    margin-top: 2rem;
     object-fit: cover;
-    width: 300px;
-    height: 90%;
+    width: 50rem;
 }
 
-.about-us_item-1 {
-
-    height: 250px;
-    border-radius: 15px;
-    margin-left: 12rem;
-}
-
-.about-us_item-2 {
-
-    height: 250px;
-    border-radius: 15px;
-
-}
-
-.about-us_item-3 {
-
-    height: 250px;
-    border-radius: 15px;
-
-}
-
-.about-us__container__bigone {
-
-    margin-left: 5em;
-    margin-top: 3rem;
-
-}
-
-.about-us__container__box {
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14rem;
-
-}
-
-.about-us__container__box__item {
-
-    width: 3rem;
-    aspect-ratio: 1;
-    margin-top: 4rem;
-    background-color: black;
-    width: 300px;
-
-
-}
-*/
 .products {
     margin-block: 6rem;
 }
@@ -437,7 +363,7 @@ nav>ul {
 .products__item-5 {
     grid-area: item-5;
 }
-/*FAQ 
+/*FAQ
 h2 is by contact style contact__h2 included*/
 .accordions{
   gap: 10vh;
@@ -482,15 +408,15 @@ h2 is by contact style contact__h2 included*/
 }
 .line2{
   --line-placement: calc(clamp(15px, 1vw, 33px) * -1);
-  transform: translateY(var(--line-placement)); 
+  transform: translateY(var(--line-placement));
 }
 .accordion p {
   font-size: clamp(1rem, 1vw, 3rem);
   padding-left: clamp(20px, 2vw, 2rem);
   transition: transform 0.3s ease-in-out;
   transform: scaleY(1);
-  
-  
+
+
 }
 
 /*Contact  styles */
@@ -609,9 +535,9 @@ h2 is by contact style contact__h2 included*/
     font-size: 1.5rem;
     border: 0.1px solid black;
     opacity: 90%;
-    border-radius: 0.2vh 
+    border-radius: 0.2vh
 }
-.contact__form button:active, 
+.contact__form button:active,
 .contact__form button:hover{
   background-color: var(--black);
 }
